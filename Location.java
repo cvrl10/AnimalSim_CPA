@@ -9,8 +9,8 @@
  */
 public class Location 
 {
-	int xCoord;//the x-coordinate on a simulation map
-	int yCoord;//the y-coordinate on a simulation map
+	private int xCoord;//the x-coordinate on a simulation map
+	private int yCoord;//the y-coordinate on a simulation map
 	
 	/**
 	 * The empty-argument constructor initializes xCoord and yCoord to zero.

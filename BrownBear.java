@@ -102,9 +102,11 @@ public class BrownBear extends Animal implements Walkable, Swimmable
 	@Override
 	public String toString() 
 	{
-		return "BrownBear [subSpecies=" + subSpecies + "]";
+		int[] coordinates = location.getCoordinates();
+		return "BrownBear [subSpecies=" + subSpecies + ", simID=" + simID + ", location=(" + coordinates[0]+","+coordinates[1]+ "), full=" + full
+				+ ", rested=" + rested + "]";
 	}//end toString
-	
+
 	/**
 	 * update the Location object
 	 */

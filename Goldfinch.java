@@ -61,11 +61,12 @@ public class Goldfinch extends Animal implements Walkable, Flyable
 	 * @return a String of information about the object
 	 */
 	@Override
-	public String toString() 
+	public String toString()
 	{
-		return "Goldfinch [wingSpan=" + wingSpan + ", simID=" + simID + ", location=" + location + ", full=" + full
+		int[] coordinates = location.getCoordinates();
+		return "Goldfinch [wingSpan=" + wingSpan + ", simID=" + simID + ", location=(" + coordinates[0]+","+coordinates[1] + "), full=" + full
 				+ ", rested=" + rested + "]";
-	}//toString
+	}//end toString
 	
 	/**
 	 * update the Location of this object
@@ -73,7 +74,7 @@ public class Goldfinch extends Animal implements Walkable, Flyable
 	@Override
 	public void fly(Location l) 
 	{
-		location = l;
+		setLocation(l);
 	}//end fly
 	
 	/**

@@ -1,11 +1,19 @@
 import java.util.ArrayList;
 
+/**
+ * This class tests all the objects of this package
+ * 
+ * @author carla
+ * @version 1.0
+ * Final Project
+ * Fall 2021
+ */
 public class Application 
 {
 	public static void main(String[] args) 
 	{
 		/**********************************
-					Location Tests
+			Location Tests
 		**********************************/
 		
 		//Instantiating a Location using the empty-argument constructor.
@@ -15,7 +23,7 @@ public class Application
 		int[] coordinates;
 		
 		//using a for each loop print the coordinates.
-		for(int numbers : location.getCoordinates())
+		for (int numbers : location.getCoordinates())
 			System.out.print(numbers+" ");
 		System.out.println();
 		
@@ -33,16 +41,16 @@ public class Application
 		System.out.println();
 		
 		/**********************************
-					Animal Tests
+			Animal Tests
 		**********************************/
-		//Attempting to instantiate the abstract class Animal, if I where to remove the comments from the code below the compiler will throw an error.
+		//Attempting to instantiate the abstract class Animal, if I were to remove the comments from the code below the compiler will throw an error.
 		//Animal creature = new Animal();
 	
 		//Instantiating  an array of animal references and initializing those references with the empty-argument constructor of the Goldfinch & BrownBear class.
-		Animal[] animal = {new Goldfinch(), new BrownBear()};
+		Animal[] animal = {new Goldfinch(), new BrownBear()};//empty-argument constructors for both Goldfinch and BrownBear
 		
 		/**********************************
-				Goldfinch Tests
+			Goldfinch Tests
 		**********************************/
 		Goldfinch gold = (Goldfinch)animal[0];
 		
@@ -59,6 +67,7 @@ public class Application
 		gold.fly(new Location(5, 5));
 		coordinates = gold.getLocation().getCoordinates();
 		System.out.println("The x-coordinate and y-coordinate of this new Location after flying is ("+coordinates[0]+","+coordinates[1]+")");
+		System.out.println();
 		
 		//Evoking isFull
 		System.out.println("Is the object full: "+gold.isFull());
@@ -73,6 +82,7 @@ public class Application
 		//Evoking setRested
 		gold.setRested(false);
 		System.out.println("Is the object rested: "+gold.isRested());
+		System.out.println();
 		
 		//Evoking walk, and using a for loop to walk to a new direction with each iteration
 		int[] walk = {0, 1, 2, 3};//putting the int directions into an array of int
@@ -88,6 +98,7 @@ public class Application
 		System.out.println("Below are the messages that are printed when the exceptions are thrown:");
 		gold.setWingSpan(13);
 		gold.setSimID(0);
+		System.out.println();
 		
 		//Evoking setWingSpan and setSimID with calls that won't throw exceptions
 		gold.setWingSpan(11);
@@ -105,7 +116,7 @@ public class Application
 		System.out.println();
 		
 		/**********************************
-				BrownBear Tests
+			BrownBear Tests
 		**********************************/
 		BrownBear bear = (BrownBear)animal[1];
 		
@@ -117,10 +128,10 @@ public class Application
 		
 		//Evoking getSubSpecies
 		System.out.println(bear.getSubSpecies());
-		
+
 		//Evoking setSubSpecies, this call throws an exception that is handled
 		bear.setSubSpecies("Kamchatka");
-		
+		System.out.println();
 		//Evoking setLocation and using walk and swim to move object to new location
 		bear.setLocation(new Location(20, 20));
 		
@@ -160,11 +171,15 @@ public class Application
 		System.out.println();
 		
 		/**********************************
-				Generics Tests
+			Generics Tests
 		**********************************/
 		ArrayList<Animal> list = new ArrayList<>();
 		list.add(gold);
 		list.add(bear);
+		list.add(new Goldfinch());
+		list.add(new BrownBear());
+		list.add(animal[0]);
+		list.add(animal[1]);
 		
 		for (Animal animals : list)
 			System.out.println(animals.toString());		

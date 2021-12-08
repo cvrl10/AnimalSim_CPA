@@ -20,7 +20,7 @@ public abstract class Animal
 	public Animal()
 	{
 		simID = 0;
-		location = new Location();
+		setLocation(new Location());
 		full = false;
 		rested = true;
 	}//end empty-argument constructor
@@ -33,7 +33,7 @@ public abstract class Animal
 	public Animal(int simID, Location l)
 	{
 		setSimID(simID);
-		location = l;
+		setLocation(l);
 		full = false;
 		rested = true;
 	}//end preferred constructor
@@ -44,7 +44,7 @@ public abstract class Animal
 	 */
 	public boolean eat()
 	{
-		Double num = Math.random();	
+		double num = Math.random();	
 		if (num <= 0.5)
 			full = false;
 		else 
@@ -58,7 +58,7 @@ public abstract class Animal
 	 */
 	public boolean sleep()
 	{
-		Double num = Math.random();	
+		double num = Math.random();	
 		if (num <= 0.5)
 			rested = false;
 		else 
@@ -81,7 +81,7 @@ public abstract class Animal
 	{
 		try
 		{
-			if (simID <= 0)
+			if (simID < 1)
 				throw new InvalidSimIDException(""+simID);
 			this.simID = simID;
 		}
